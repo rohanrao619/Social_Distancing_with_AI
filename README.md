@@ -1,4 +1,4 @@
-# Social_Distancing_with_AI
+# Social Distancing with Artificial Intelligence
 This project aims at monitoring people violating Social Distancing over video footage coming from CCTV Cameras. Uses YOLOv3 along with DBSCAN clustering for recognizing potential intruders. A Face Mask Classifier model (Resnet50) is trained and deployed for identifying people not wearing a face mask. Augmented masked faces are generated using facial landmarks for aiding the training process.
 
 A detailed description of this project along with the results can be found [here](#project-description-and-results).
@@ -46,3 +46,29 @@ Also before starting you need to make sure that the path to various files and fo
         drive.mount('drive/')
         
 2. Update file/folder locations as `'drive/path_to_file_or_folder'`.
+
+## Tools Used
+* [NumPy](https://numpy.org/) : Used for storing and manipulating high dimensional arrays.
+* [Matplotlib](https://matplotlib.org/) : Used for plotting.
+* [Scikit-Learn](https://scikit-learn.org/stable/) : Used for DBSCAN clustering.
+* [PIL](https://pillow.readthedocs.io/en/stable/) : Used for manipulating images.
+* [OpenCV](https://opencv.org/) : Used for manipulating images and video streams.
+* [Keras](https://keras.io/) : Used for designing and training the Face_Mask_Classifier model.
+* [face-detection](https://github.com/hukkelas/DSFD-Pytorch-Inference) : Used for detecting faces with Dual Shot Face Detector.
+* [face-recognition](https://github.com/ageitgey/face_recognition) : Used for detecting facial landmarks.
+* [tqdm](https://github.com/tqdm/tqdm) : Used for showing progress bars.
+* [Google Colab](https://colab.research.google.com/) : Used as the developement environment for executing high-end computations on its backend GPUs/TPUs and for editing Jupyter Notebooks. 
+
+## Contributing
+You are welcome to contribute :
+
+1. Fork it (https://github.com/rohanrao619/Social_Distancing_with_AI/fork)
+2. Create new branch : `git checkout -b new_feature`
+3. Commit your changes : `git commit -am 'Added new_feature'`
+4. Push to the branch : `git push origin new_feature`
+5. Submit a pull request !
+
+## License
+This Project is licensed under the MIT License, see the [LICENSE](LICENSE) file for details.
+
+## Project Description and Results
