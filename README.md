@@ -72,3 +72,22 @@ You are welcome to contribute :
 This Project is licensed under the MIT License, see the [LICENSE](LICENSE) file for details.
 
 ## Project Description and Results
+### Person Detection
+[YOLO](https://pjreddie.com/darknet/yolo/) (You Only Look Once) is a state-of-the-art, real-time object detection system. It's Version 3 (pretrained on COCO dataset), with a resolution of 416x416 in used in this project for obtaining the bounding boxes of individual persons in a video frame. To obtain a faster processing speed, a resolution of 320x320 can be used. YOLOv3-tiny can also be used for speed optimization. However it will result in decreased detection accuracy.
+
+### Face Detection
+[Dual Shot Face Detector](https://github.com/Tencent/FaceDetection-DSFD) (DSFD) is used throughout the project for detecting faces. Common Face Detectors such as the Haar-Cascades or the MTCNN are not efficient in this particular use-case as they are not able to detect faces that are covered or have low-resolution. DSFD is also good in detecting faces in wide range of orientations. It is bit heavy on the pipeline, but produces accurate results.
+
+### Face Mask Classifier
+A slighly modified ResNet50 model (with base layers pretrained on imagenet) is used for classifying whether a face is masked properly or not. Combination of some AveragePooling2D and Dense (with dropout) layers ending with a Sigmoid or Softmax classifier is appended on top of the base layers. Different architectures can be used for the purpose, however complex ones should be avoided to reduce overfitting. For this classifier to work properly in all conditions, we need a diverse dataset that contains faces in various orientations and lighting conditions. For better results, our dataset should also cover people of different ages and gender. Finding such wide range of pictures having people wearing a face mask becomes a challenging task. Thus we need to apply numerous kinds of Augmentation before we start training.
+
+### Masked Face Augmentation
+It may seem a little akward, but with the power of deep learning in our hands, impossible is nothing!</br>
+|![](Results/Masked_Face_Augmentation/Original.jpg)|![](Results/Masked_Face_Augmentation/Landmarks.jpg)|
+|:---:|:---:|
+|**Original**|**Facial Landmarks**|
+
+## Final Notes
+**Thanks for going through this Repository! Have a nice day.**</br>
+</br>**S Rohan Rao**</br> 
+Contact me : rohanrao619@gmail.com
