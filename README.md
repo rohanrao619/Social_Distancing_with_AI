@@ -90,7 +90,9 @@ It may seem a little akward, but with the power of deep learning in our hands, i
 |:---:|:---:|
 |**Original**|**Facial Landmarks**|
 
-The picture on the left is the original image and that on the right shows the points (green dots) that we need to artificially put a face mask on it. These points are found by doing some manipulation on facial landmarks, namely nose_bridge and chin. Top point is near the 1st and 2nd points in the detected nose_bridge points. Left, Right and Bottom points are near the first, last and middle points in the detected chin points respectively. Now we just need to resize and rotate the image of mask according to these 4 reference points and paste it on the original one. Implementation details can be found in this [notebook](https://github.com/rohanrao619/Social_Distancing_with_AI/blob/master/Data_Augmentation.ipynb). Trying with different mask images we get this :
+The picture on the left is the original image and that on the right shows the points (green dots) that we need to artificially put a face mask on it. These points are found by doing some manipulation on facial landmarks, namely nose_bridge and chin. Top point is near the 1st and 2nd points in the detected nose_bridge points. Left, Right and Bottom points are near the first, last and middle points in the detected chin points respectively.
+
+Now we just need to resize and rotate the image of mask according to these 4 reference points and paste it on the original one. Implementation details can be found in this [notebook](https://github.com/rohanrao619/Social_Distancing_with_AI/blob/master/Data_Augmentation.ipynb). Trying with different mask images we get this :
 
 
 |![](Results/Masked_Face_Augmentation/Masked_1.jpg)|![](Results/Masked_Face_Augmentation/Masked_2.jpg)|![](Results/Masked_Face_Augmentation/Masked_3.jpg)|![](Results/Masked_Face_Augmentation/Masked_4.jpg)|
@@ -116,3 +118,29 @@ Implementation details can be found in this [notebook](https://github.com/rohanr
 |![](Results/Blurring_Effects/Horizontal_Motion_Blur.jpg)|![](Results/Blurring_Effects/Vertical_Motion_Blur.jpg)|![](Results/Blurring_Effects/Main_Diagonal_Motion_Blur.jpg)|![](Results/Blurring_Effects/Anti_Diagonal_Motion_Blur.jpg)|
 |:---:|:---:|:---:|:---:|
 |**Horizontal**|**Vertical**|**Main Diagonal**|**Anti Diagonal**|
+
+### Training 
+It's training time! By using Keras' ImageDataGenerator we apply augmentation on the fly. Training data now keep changing after each epoch. Rotation, Horizontal Flip, Brightness Shift are some of augmentations that can be applied. We also incorporate out blurring augmentation with some associated probabilities during the training. Implementation details can be found in this [notebook](https://github.com/rohanrao619/Social_Distancing_with_AI/blob/master/Face_Mask_Classifier.ipynb). 
+
+The model needs to be trained on tons of relevant data before we can apply it in real-time and expect it to work. It needs a lot of computational power and I mean a lot! We can try our models trained on a small dataset in our local machines, but it would not produce desirable results. We can use pretrained open-source models for now. So we use the model trained by the team of [Thang Pham](https://github.com/aome510/Mask-Classifier) for this purpose. It is basically a ResNet50 Model with a modified top.
+
+### Pipeline
+![](Pipeline.png)
+
+Implementation details can be found in this [notebook](https://github.com/rohanrao619/Social_Distancing_with_AI/blob/master/Social_Distancing_Monitor.ipynb). Some optimizations can be made in the form of vectorization. For getting the position of a person, there are various approaches. One of them being simply using the centers of the bounding boxes, the one used in this project. Other one is using OpenCV's perspective transform to get a bird's eye view of the positions, but that kind of needs pretty accurate frame of reference points and increases the complexity by a bit. However if implemented correctly, it will no doubt produce better results. For now we stick to the first approach. Remember, there's always scope for improvements!
+
+### Results
+![](Results/Demo_1.gif)
+
+As we can see, the system identifies the people in the frame and their faces (if it is visible) and puts green or red bounding boxes if they are safe or not safe respectively. Status is shown in a bar at the top, showing all the details. These are pretty decent results considering the complexity of the problem we have at our hands. But we can't see if the Face Mask Classifier is working properly or not. Let's take a look at another example.
+
+![](Results/Demo_2.gif)
+
+Yes! there we have it. It is producing very neat results, detecting masked faces properly. These are just gifs for embedding in this Readme, original full resolution video results can be seen [here](https://github.com/rohanrao619/Social_Distancing_with_AI/tree/master/Results).
+
+Artificial Intelligence has sure come a long way in solving such real world problems. Hoping that it helps the world overcome the COVID-19 situation, so we can party again, hold our glasses high, and say Cheers! 
+
+## Final Notes
+**Thanks for going through this Repository! Have a nice day.**</br>
+</br>**S Rohan Rao**</br> 
+Contact me : rohanrao619@gmail.com
