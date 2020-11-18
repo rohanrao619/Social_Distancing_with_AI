@@ -68,6 +68,10 @@ You are welcome to contribute :
 4. Push to the branch : `git push origin new_feature`
 5. Submit a pull request !
 
+## Future Work
+* Speed Optimization
+* Face Mask Classification for Side Views
+
 ## License
 This Project is licensed under the MIT License, see the [LICENSE](LICENSE) file for details.
 
