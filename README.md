@@ -71,6 +71,9 @@ You are welcome to contribute :
 ## Future Work
 * Speed Optimization
 * Face Mask Classification for Side Views
+* Better Social Distancing Detection
+
+If you have any new ideas or suggestions to improve this project, feel free to contact me. Your valuable feedback is highly appreciated!
 
 ## License
 This Project is licensed under the MIT License, see the [LICENSE](LICENSE) file for details.
