@@ -145,7 +145,9 @@ As we can see, the system identifies the people in the frame and their faces (if
 
 ![](Results/Demo_2.gif)
 
-Yes! there we have it. It is producing very neat results, detecting masked faces properly. These are just gifs for embedding in this Readme, original full resolution video results can be seen [here](https://github.com/rohanrao619/Social_Distancing_with_AI/tree/master/Results).
+Yes! there we have it. It is producing very neat results, detecting masked faces properly. Keep in mind that while the social distancing is pretty decently detected in these samples (2nd Example), the system is not designed for these kind of clips, and might perform terribly sometimes (As people are in different scales and the 3rd dimension of depth is completely ignored). Obviously, a top view like from a CCTV Camera is more suitable for social distancing detection (As in the 1st Example).
+
+These are just GIFs for embedding in this Readme, original full resolution video results can be seen [here](https://github.com/rohanrao619/Social_Distancing_with_AI/tree/master/Results).
 
 Artificial Intelligence has sure come a long way in solving such real world problems. Hoping that it helps the world overcome the COVID-19 situation, so we can party again, hold our glasses high, and say Cheers!
 
