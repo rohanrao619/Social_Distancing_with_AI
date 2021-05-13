@@ -26,7 +26,7 @@ They can be installed from the Python Package Index using pip as follows :
      pip install Pillow
      pip install opencv-python
      pip install Keras
-     pip install face-detection
+     pip install git+https://github.com/hukkelas/DSFD-Pytorch-Inference.git
      pip install face-recognition
      pip install tqdm
      
