@@ -37,7 +37,7 @@ This project is implemented using interactive Jupyter Notebooks. You just need t
 
 Please download the following files (from the given links) and place them in the Models folder in the root directory :
 1. YOLOv3 weights : https://pjreddie.com/media/files/yolov3.weights
-2. Face Mask Classifier ResNet50 Keras Model : https://drive.google.com/drive/folders/1Q59338kd463UqUESwgt7aF_W46Fj5OJd?usp=sharing
+2. Face Mask Classifier ResNet50 Keras Model : https://drive.google.com/drive/folders/1jupSKiJ_ngJYQmXA4cpur_KZGgUud3dA?usp=sharing
 
 Also before starting you need to make sure that the path to various files and folders in the notebook are updated according to your working environment. If you are using [Google Colab](https://colab.research.google.com/), then :
 1. Mount Google Drive using : 
